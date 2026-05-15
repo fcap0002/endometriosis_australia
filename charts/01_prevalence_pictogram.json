@@ -6,19 +6,19 @@
     "background": "transparent",
     "data":{
         "values":[
-            {"position": 1, "affected": true, "url": "assets/uterus-pink.png"},
-            {"position": 2, "affected": false, "url": "assets/uterus-grey.png"},
-            {"position": 3, "affected": false, "url": "assets/uterus-grey.png"},
-            {"position": 4, "affected": false, "url": "assets/uterus-grey.png"},
-            {"position": 5, "affected": false, "url": "assets/uterus-grey.png"},
-            {"position": 6, "affected": false, "url": "assets/uterus-grey.png"},
-            {"position": 7, "affected": false, "url": "assets/uterus-grey.png"}
+            {"position": 1, "affected": true, "img": "assets/uterus-pink.png"},
+            {"position": 2, "affected": false, "img": "assets/uterus-grey.png"},
+            {"position": 3, "affected": false, "img": "assets/uterus-grey.png"},
+            {"position": 4, "affected": false, "img": "assets/uterus-grey.png"},
+            {"position": 5, "affected": false, "img": "assets/uterus-grey.png"},
+            {"position": 6, "affected": false, "img": "assets/uterus-grey.png"},
+            {"position": 7, "affected": false, "img": "assets/uterus-grey.png"}
         ]
     },
     "mark": {"type": "image", "width": 50, "height": 60},
     "encoding": {
         "x": {"field": "position", "type": "ordinal", "axis": null},
-        "url": {"field": "url", "type": "nominal"},
+        "url": {"field": "img", "type": "nominal"},
         "tooltip": [
             {"field": "affected", "type": "nominal", "title": "Diagnosed with endometriosis?"}
         ]

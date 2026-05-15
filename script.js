@@ -1,5 +1,5 @@
 const CHART_LIST = [
-    {id:"chart-1", spec: "endometriosis_australia/charts/01_prevalence_pictogram.json"}
+    {id:"chart-1", spec: "charts/01_prevalence_pictogram.json"}
 ]
 
 const EMBED_OPTIONS = {
