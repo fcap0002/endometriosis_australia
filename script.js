@@ -1,3 +1,5 @@
+console.log("script.js is running, vegaEmbed type:", typeof vegaEmbed);
+
 const CHART_LIST = [
     {id:"chart-1", spec: "charts/01_prevalence_pictogram.json"}
 ]
