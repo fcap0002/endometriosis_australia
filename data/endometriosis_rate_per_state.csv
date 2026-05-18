@@ -1,0 +1,33 @@
+diagnosis_scope,age_group,state_code,state,rate_per_100k
+Principal diagnosis,15-44 years,NSW,New South Wales,284.9
+Principal diagnosis,15-44 years,VIC,Victoria,367.5
+Principal diagnosis,15-44 years,QLD,Queensland,469.0
+Principal diagnosis,15-44 years,WA,Western Australia,283.7
+Principal diagnosis,15-44 years,SA,South Australia,466.8
+Principal diagnosis,15-44 years,TAS,Tasmania,266.4
+Principal diagnosis,15-44 years,ACT,Australian Capital Territory,474.6
+Principal diagnosis,15-44 years,NT,Northern Territory,158.4
+Principal diagnosis,All ages,NSW,New South Wales,130.6
+Principal diagnosis,All ages,VIC,Victoria,169.6
+Principal diagnosis,All ages,QLD,Queensland,210.7
+Principal diagnosis,All ages,WA,Western Australia,127.8
+Principal diagnosis,All ages,SA,South Australia,194.3
+Principal diagnosis,All ages,TAS,Tasmania,108.2
+Principal diagnosis,All ages,ACT,Australian Capital Territory,243.6
+Principal diagnosis,All ages,NT,Northern Territory,83.5
+Any diagnosis,15-44 years,NSW,New South Wales,626.5
+Any diagnosis,15-44 years,VIC,Victoria,607.5
+Any diagnosis,15-44 years,QLD,Queensland,771.0
+Any diagnosis,15-44 years,WA,Western Australia,501.8
+Any diagnosis,15-44 years,SA,South Australia,817.4
+Any diagnosis,15-44 years,TAS,Tasmania,525.0
+Any diagnosis,15-44 years,ACT,Australian Capital Territory,735.9
+Any diagnosis,15-44 years,NT,Northern Territory,301.2
+Any diagnosis,All ages,NSW,New South Wales,305.0
+Any diagnosis,All ages,VIC,Victoria,294.7
+Any diagnosis,All ages,QLD,Queensland,368.7
+Any diagnosis,All ages,WA,Western Australia,247.0
+Any diagnosis,All ages,SA,South Australia,364.2
+Any diagnosis,All ages,TAS,Tasmania,224.1
+Any diagnosis,All ages,ACT,Australian Capital Territory,391.6
+Any diagnosis,All ages,NT,Northern Territory,169.5

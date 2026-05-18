@@ -1,0 +1,11 @@
+rank,procedure,type,pct,description
+1,Laparoscopic excision of pelvic lesions,Treatment,42.5,Removal of lesions by cutting
+2,Diagnostic hysteroscopy,Diagnostic,41.8,Examination of inside of uterus
+3,Dilation and curettage (D&C),Treatment,37.9,Scraping uterine lining
+4,Laparoscopic division of adhesions,Treatment,23.6,Cutting/dividing adhesions
+5,Test for tubal patency,Diagnostic,18.6,Fallopian tube blockage check
+6,Laparoscopic diathermy of lesions,Treatment,17.0,Removal of lesions by burning
+7,Insertion of intrauterine device (IUD),Treatment,15.5,Used in treatment of endometriosis
+8,Cystoscopy,Diagnostic,13.4,Examination of inside of bladder
+9,Bilateral laparoscopic salpingectomy,Treatment,12.0,Removal of both fallopian tubes
+10,Laparoscopic total hysterectomy,Treatment,11.5,Removal of the uterus

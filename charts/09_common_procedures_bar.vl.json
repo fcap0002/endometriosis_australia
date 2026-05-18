@@ -1,0 +1,47 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Top 10 most common procedures during Endometriosis-related Hospitalisations, 2021-2022.  Categorised by procedure type. Source:  AIHW NHMD.",
+    "width": 500,
+    "height": 360,
+    "background": "transparent",
+    "data": {"url": "data/treatment_procedures.csv"},
+    "mark":{"type": "bar", "cornerRadius": 3, "height": 22},
+    "encoding": {
+        "y":{
+            "field": "procedure",
+            "type": "nominal",
+            "title": "Procedure",
+            "sort": "-x",
+            "axis":{"labelFontSize": 11, "titleFontSize": 12, "titlePadding": 10, "labelLimit": 240}
+        },
+        "x":{
+            "field": "pct",
+            "type": "quantitative",
+            "title": "% of Endometriosis-related Hospitalisations",
+            "axis": {"labelFontSize": 11, "titleFontSize": 12, "titlePadding": 10, "format": ".0f"}
+        },
+        "color": {
+            "field": "type",
+            "type": "nominal",
+            "scale": {"domain": ["Treatment", "Diagnostic"],
+                      "range": ["#993556", "#ED93B1"]},
+            "legend": {
+                "title": "Procedure Type",
+                "labelFontSize": 10,
+                "titleFontSize": 11,
+                "titlePadding": 10,
+                "orient": "bottom"
+            }
+        },
+        "tooltip":[
+            {"field": "procedure", "type": "nominal", "title": "Procedure"},
+            {"field": "description", "type": "nominal", "title": "What it is"},
+            {"field": "pct", "type": "quantitative", "title": "% of Hospitalisations", "format": ".1f"},
+            {"field": "type", "type": "nominal", "title": "Procedure Type", "format": ","}
+        ]
+    },
+    "config": {
+        "view": {"stroke": null},
+        "axis": {"grid": false, "domain": false}
+    }
+}

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Endometriosis health spending by age group and broad area of expenditure, Australia 2020-21. Source: AIHW Disease Expenditure Study.",
+  "width": 600,
+  "height": 320,
+  "background": "transparent",
+  "data": {"url": "data/spending_by_age.csv"},
+  "mark": {"type": "bar"},
+  "encoding": {
+    "x": {
+      "field": "age_group",
+      "type": "ordinal",
+      "title": "Age group",
+      "sort": ["<1", "1-4", "5-9", "10-14", "15-19", "20-24", "25-29", "30-34",
+               "35-39", "40-44", "45-49", "50-54", "55-59", "60-64", "65-69",
+               "70-74", "75-79", "80-84", "85+"],
+      "axis": {"labelFontSize": 10, "labelAngle": -40, "titleFontSize": 12, "titlePadding": 10, "labelLimit": 100}
+    },
+    "y": {
+      "field": "amount",
+      "type": "quantitative",
+      "title": "Annual spend (AUD)",
+      "axis": {"labelFontSize": 11, "titleFontSize": 12, "titlePadding": 10, "format": "$,.2s"}
+    },
+    "color": {
+      "field": "broad_area",
+      "type": "nominal",
+      "title": "Category",
+      "scale": {
+        "domain": ["Hospitals", "Referred medical services", "Primary health care"],
+        "range": ["#993556", "#ED93B1", "#0F6E56"]
+      },
+      "legend": {
+        "orient": "bottom",
+        "labelFontSize": 11,
+        "titleFontSize": 11
+      }
+    },
+    "order": {"field": "broad_area", "type": "nominal"},
+    "tooltip": [
+      {"field": "age_group", "type": "ordinal", "title": "Age group"},
+      {"field": "broad_area", "type": "nominal", "title": "Category"},
+      {"field": "amount", "type": "quantitative", "title": "Annual spend", "format": "$,.0f"}
+    ]
+  },
+  "config": {
+    "view": {"stroke": null},
+    "axis": {"grid": true, "gridColor": "#E5DDD0", "gridOpacity": 0.4, "domain": false}
+  }
+}

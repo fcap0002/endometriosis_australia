@@ -1,0 +1,82 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Years Lived with Disability (YLD) due to Endometriosis in Australian women, 2003-2023. Shows ~75% increase in YLD over two decades. Source: AIHW AUstralian Burden of Disease Study 2024.",
+    "width": 500,
+    "height": 320,
+    "background": "transparent",
+    "data": {"url": "data/years_lived_endometriosis.csv"},
+    "layer":[
+        {
+            "mark":{ "type": "area", "opacity": 0.15, "color": "#993556", "interpolate": "monotone" },
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "quantitative",
+                    "title": "Year",
+                    "scale": {"domain": [2002, 2024]},
+                    "axis":{"format": "d", "labelFontSize": 11, "titleFontSize": 12, "titlePadding": 10, "values": [2003, 2008, 2013, 2018, 2023]}
+                },
+                "y": {
+                    "field": "yld_total",
+                    "type": "quantitative",
+                    "title": "Years Lived with Disability (YLD)",
+                    "scale": {"domain": [0,9000]},
+                    "axis":{"labelFontSize": 11, "titleFontSize": 12, "titlePadding": 10, "format": ".0f"}
+                }
+            }
+        },
+        {
+            "mark":{ "type": "line", "color": "#ED93B1", "strokeWidth": 3, "interpolate": "monotone" },
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "quantitative",
+                    "title": "Year",
+                    "scale": {"domain": [2002, 2024]},
+                    "axis":{"format": "d", "labelFontSize": 11, "titleFontSize": 12, "titlePadding": 10, "values": [2003, 2008, 2013, 2018, 2023]}
+                },
+                "y": {
+                    "field": "yld_total",
+                    "type": "quantitative",
+                    "title": "Years Lived with Disability (YLD)",
+                    "scale": {"domain": [0,9000]},
+                    "axis":{"labelFontSize": 11, "titleFontSize": 12, "titlePadding": 10, "format": ".0f"}
+                }
+            }
+        },
+        {
+            "mark": {"type": "point", "filled": true, "color": "#993556", "size": 100},
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "yld_total",
+                    "type": "quantitative"
+                },
+                "tooltip":[
+                    {"field": "year", "type": "quantitative", "title": "Year"},
+                    {"field": "yld_total", "type": "quantitative", "title": "YLD", "format": ".0f"},
+                    {"field": "pct_change_from_2003", "type": "quantitative", "title": "% Change from 2003"}
+                ]
+            }
+        },
+        {
+            "data":{
+                "values":[
+                    {"year": 2023, "yld_total": 8213, "label": "+75% since 2003"}]
+            },
+            "mark": {"type": "text", "color": "#4B1528", "fontSize": 12, "fontWeight": 500, "dx": -10, "dy": -10, "align": "right"},
+            "encoding": {
+                "x": {"field": "year", "type": "quantitative"},
+                "y": {"field": "yld_total", "type": "quantitative"},
+                "text": {"field": "label", "type": "nominal"}
+            }
+        }
+    ],
+    "config": {
+        "view": {"stroke": null},
+        "axis": {"grid": true, "gridColor":"#E5DDD0", "gridOpacity": 0.5, "domain": false}
+    }
+}

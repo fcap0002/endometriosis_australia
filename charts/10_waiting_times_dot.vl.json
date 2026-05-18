@@ -1,0 +1,61 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Waiting times for elective procedures commonly performed during endometriosis hospitalisations, 2021-2022. Shows median and 90th percentile wait in days. Source: AIHW National Elective Surgery Waiting Times Database.",
+    "width": 500,
+    "height": 220,
+    "background": "transparent",
+    "data": {"url": "data/procedure_waiting_time.csv"},
+    "layer":[
+        {
+            "mark": {"type": "rule", "strokeWidth": 4, "color": "#ED93B1", "strokeCap": "round"},
+            "encoding": {
+                "y": {"field": "procedure", "type": "nominal", "sort": null, "axis": {"labelFontSize": 11}},
+                "x": {"field": "median_days", "type": "quantitative", "scale": {"domain": [0, 380]}, "title": "Days waiting"},
+                "x2": {"field": "p90_days"}
+            }
+        },
+        {
+            "mark": {"type": "circle", "size": 220, "color": "#993556", "stroke": "#FBF7F0", "strokeWidth": 2},
+            "encoding": {
+                "y": {"field": "procedure", "type": "nominal"},
+                "x": {"field": "median_days", "type": "quantitative"},
+                "tooltip": [
+                    {"field": "procedure", "type": "nominal", "title": "Procedure"},
+                    {"field": "median_days", "type": "quantitative", "title": "Median wait (days)"}
+                ]
+            }
+        },
+        {
+            "mark": {"type": "circle", "size": 220, "color": "#4B1528", "stroke": "#FBF7F0", "strokeWidth": 2},
+            "encoding": {
+                "y": {"field": "procedure", "type": "nominal"},
+                "x": {"field": "p90_days", "type": "quantitative"},
+                "tooltip": [
+                    {"field": "procedure", "type": "nominal", "title": "Procedure"},
+                    {"field": "p90_days", "type": "quantitative", "title": "90th percentile wait (days)"},
+                    {"field": "pct_over_year", "type": "quantitative", "title": "% waiting >365 days"}
+                ]
+            }
+        },
+        {
+            "mark": {"type": "text", "fontSize": 10, "color": "#4B1528", "dy": -14, "fontWeight": 500},
+            "encoding": {
+                "y": {"field": "procedure", "type": "nominal"},
+                "x": {"field": "p90_days", "type": "quantitative"},
+                "text": {"field": "p90_days", "type": "quantitative", "format": ""}
+            }
+        },
+        {
+            "mark": {"type": "text", "fontSize": 10, "color": "#4B1528", "dy": -14, "fontWeight": 500},
+            "encoding": {
+                "y": {"field": "procedure", "type": "nominal"},
+                "x": {"field": "median_days", "type": "quantitative"},
+                "text": {"field": "median_days", "type": "quantitative"}
+            }
+        }
+    ],
+    "config": {
+        "view": {"stroke": null},
+        "axis": {"grid": true,"gridColor": "#E5DDD0", "gridOpacity": 0.5,"labelFontSize": 11, "titleFontSize": 12, "titlePadding": 10, "domain": false}
+    }
+}

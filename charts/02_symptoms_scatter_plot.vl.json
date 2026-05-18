@@ -1,0 +1,77 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Scatter Plot of Endometriosis Symptoms by Prevalence and Impact. Source: Mitchel et al. 2024, AOGS.",
+    "width": 350,
+    "height": 380,
+    "background": "transparent",
+    "data": {"url": "data/endometriosis_symptoms.csv"},
+    "layer":[
+        {
+            "mark": {"type": "circle", "opacity": 0.75, "size": 180},
+            "encoding":{
+                "x": {
+                    "field": "experienced_pct",
+                    "type": "quantitative",
+                    "title": "% of Women who Experience this Symptom",
+                    "scale": {"domain":[0,100]},
+                    "axis": {"labelFontSize": 11, "titleFontSize": 12, "titlePadding": 10}
+                },
+                "y":{
+                    "field": "impact_ratio_pct",
+                    "type": "quantitative",
+                    "title": "% who Say it's their Most Impactful Symptom",
+                    "scale": {"domain":[0,28]},
+                    "axis": {"labelFontSize": 11, "titleFontSize": 12, "titlePadding": 10}
+                },
+                "color":{
+                    "condition":{
+                        "test": "datum.symptom === 'Pelvic pain' || datum.symptom === 'Infertility'",
+                        "value": "#993556"
+                    },
+                    "value": "#C9B8AE"
+                },
+                "tooltip":[
+                    {"field": "symptom", "type": "nominal", "title": "Symptom"},
+                    {"field": "experienced_pct", "type": "quantitative", "title": "% who Experience this Symptom"},
+                    {"field": "impact_ratio_pct", "type": "quantitative", "title": "% who Say it's their Most Impactful Symptom"}
+                ]
+            }
+        },
+        {
+            "transform": [
+                {"filter": "datum.symptom === 'Pelvic pain' || datum.symptom === 'Infertility' || datum.symptom === 'Abdominal pain' || datum.symptom === 'Bloating' || datum.symptom ==='Fatigue'"}
+            ],
+            "mark":{
+                "type": "text",
+                "align": "left",
+                "baseline": "middle",
+                "dx": 10,
+                "fontSize": 11,
+                "fontWeight": 500
+            },
+            "encoding": {
+                "x": {
+                    "field": "experienced_pct",
+                    "type": "quantitative"
+                },
+                "y":{
+                    "field": "impact_ratio_pct",
+                    "type": "quantitative"
+                },
+                "text":{"field": "symptom", "type": "nominal"},
+                "color":{
+                    "condition":{
+                        "test": "datum.symptom === 'Pelvic pain' || datum.symptom === 'Infertility'",
+                        "value": "#4B1528"
+                    },
+                    "value": "#6B5F62"
+                }
+            }
+        }
+    ],
+    "config":{
+        "view": {"stroke": null},
+        "axis": {"grid": true, "gridColor": "#E5DDD0", "gridOpacity": 0.5, "domain": false}
+    }
+
+}

@@ -1,0 +1,4 @@
+procedure,n_procedures,median_days,p90_days,pct_over_year
+Laparoscopy,8500,78,354,7.7
+"Hysteroscopy, dilation and curettage",30021,27,157,1.6
+Cystoscopy,51749,24,132,1.6

@@ -1,0 +1,54 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Grouped bar chart of co-occurring diagnoses among endometriosis-related hospitalisations, broken down by counting view. Source: AIHW (2023), NHMD Table S9, 2016-17.",
+  "width": 540,
+  "height": 360,
+  "background": "transparent",
+  "data": {"url": "data/endo_cooccurring_diagnoses.csv"},
+  "mark": {"type": "bar", "cornerRadiusEnd": 2},
+  "encoding": {
+    "y": {
+      "field": "diagnosis",
+      "type": "nominal",
+      "title": null,
+      "sort": {"field": "percent", "op": "max", "order": "descending"},
+      "axis": {"labelFontSize": 11, "labelLimit": 220}
+    },
+    "x": {
+      "field": "percent",
+      "type": "quantitative",
+      "title": "% of hospitalisations in that view",
+      "axis": {"labelFontSize": 11, "titleFontSize": 12, "titlePadding": 10, "format": ".0f"}
+    },
+    "yOffset": {
+      "field": "view",
+      "type": "nominal",
+      "sort": ["Any endo hospitalisation", "Principal diagnosis", "Additional diagnosis only"]
+    },
+    "color": {
+      "field": "view",
+      "type": "nominal",
+      "title": "Counting view",
+      "sort": ["Any endo hospitalisation", "Principal diagnosis", "Additional diagnosis only"],
+      "scale": {
+        "domain": ["Any endo hospitalisation", "Principal diagnosis", "Additional diagnosis only"],
+        "range": ["#993556", "#ED93B1", "#C9658A"]
+      },
+      "legend": {
+        "orient": "bottom",
+        "labelFontSize": 11,
+        "titleFontSize": 11,
+        "labelLimit": 240
+      }
+    },
+    "tooltip": [
+      {"field": "diagnosis", "type": "nominal", "title": "Diagnosis"},
+      {"field": "view", "type": "nominal", "title": "View"},
+      {"field": "percent", "type": "quantitative", "title": "% of hospitalisations"}
+    ]
+  },
+  "config": {
+    "view": {"stroke": null},
+    "axis": {"grid": true, "gridColor": "#E5DDD0", "gridOpacity": 0.4, "domain": false}
+  }
+}

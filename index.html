@@ -23,13 +23,19 @@
 
     <!--Header-->
     <header>
-        <div class = "hero-inner">
-            <h1 class = "hero-title">The Hidden Burden of Endometriosis in Australia</h1>
-            <p class = "hero-description">A condition affecting 1 in 7 Australian women, yet remains underdiagnosed.</p>
-            <div class = "anchor-stats">
+        <div class="hero-inner">
+            <h1 class="hero-title">The Hidden Burden of Endometriosis in Australia</h1>
+            <p class="hero-description">A condition affecting <strong>1 in 7</strong> Australian women, yet remains underdiagnosed.</p>
+            
+            <div class="hero-visual">
+                <div id="chart-1" class="pictogram"></div>
+                <p class="pictogram-caption">By midlife, an estimated <strong>1 in 7</strong> Australian women are diagnosed with endometriosis.</p>
+            </div>
+            
+            <div class="anchor-stats">
                 <div class="stat"><div class="stat-num">1 in 7</div><div class="stat-label">women affected</div></div>
                 <div class="stat"><div class="stat-num">~7 yrs</div><div class="stat-label">to diagnosis</div></div>
-                <div class="stat"><div class="stat-num">$293M</div><div class="stat-label">spent per year</div></div>
+                <div class="stat"><div class="stat-num">$247M</div><div class="stat-label">spent per year</div></div>
             </div>
         </div>
     </header>
@@ -40,15 +46,263 @@
                 <h2 class = "section-title">What is it, and who does it affect?</h2>
                 <p class = "section-intro">Endometriosis is a chronic inflammatory condition affecting women across all ages — but it most commonly emerges during the years women are at school, building careers, and starting families.</p>
             </div>
-            <div class = "grid-3">
+
+            <div class="symptom-panel">
+                <h3 class="symptom-panel-title">Common symptoms</h3>
+                <p class="symptom-panel-sub">Symptoms vary widely between individuals, which is part of why diagnosis takes so long.</p>
+                <div class="symptom-grid">
+                <div class="symptom">
+                    <div class="symptom-icon" aria-hidden="true">⚡</div>
+                    <div class="symptom-label">Severe pelvic pain</div>
+                    <div class="symptom-note">Especially during periods, intercourse, or daily activity</div>
+                </div>
+                <div class="symptom">
+                    <div class="symptom-icon" aria-hidden="true">🩸</div>
+                    <div class="symptom-label">Heavy bleeding</div>
+                    <div class="symptom-note">Long periods or bleeding between cycles</div>
+                </div>
+                <div class="symptom">
+                    <div class="symptom-icon" aria-hidden="true">🌙</div>
+                    <div class="symptom-label">Chronic fatigue</div>
+                    <div class="symptom-note">Persistent exhaustion not relieved by rest</div>
+                </div>
+                <div class="symptom">
+                    <div class="symptom-icon" aria-hidden="true">🍃</div>
+                    <div class="symptom-label">Bowel &amp; bladder pain</div>
+                    <div class="symptom-note">Pain when urinating or during bowel movements</div>
+                </div>
+                <div class="symptom">
+                    <div class="symptom-icon" aria-hidden="true">🫧</div>
+                    <div class="symptom-label">Bloating</div>
+                    <div class="symptom-note">Often called "endo belly" — abdominal swelling</div>
+                </div>
+                <div class="symptom">
+                    <div class="symptom-icon" aria-hidden="true">💭</div>
+                    <div class="symptom-label">Anxiety &amp; depression</div>
+                    <div class="symptom-note">Linked to chronic pain and delayed diagnosis</div>
+                </div>
+                </div>
+                <p class="symptom-panel-footer">Source: Jean Hailes for Women's Health; AIHW (2023)</p>
+            </div>
+
+            <!-- NEW: 2-column top, full-width bottom -->
+            <div class="grid-2">
                 <figure class="chart-card">
-                    <figcaption class="chart-title">1 in 7 Australian women are diagnosed by midlife</figcaption>
-                    <div id="chart-1" class="chart"></div>
+                    <figcaption class="chart-title">Common vs Devastating — symptoms don't always match</figcaption>
+                    <div id="chart-2" class="chart"></div>
+                    <p class="chart-source">Source: Sherwin et al. (2024), Acta Obstet Gynecol Scand</p>
+                </figure>
+                <figure class="chart-card">
+                    <figcaption class="chart-title">Cumulative incidence by age</figcaption>
+                    <div id="chart-3" class="chart"></div>
                     <p class="chart-source">Source: AIHW (2023), ALSWH</p>
                 </figure>
             </div>
 
+            <figure class="chart-card chart-card-wide">
+                <figcaption class="chart-title">The burden has been spreading younger over a decade</figcaption>
+                <div id="chart-4" class="chart"></div>
+                <p class="chart-source">Source: AIHW (2023), National Hospital Morbidity Database</p>
+            </figure>
         </section>
+
+        <!--SECTION 02: LIVING WITH ENDOMETRIOSIS-->
+        <section class = "section">
+            <div class = "section-header">
+                <span class = "section-number">02</span>
+                <h2 class = "section-title">The Burden of Living with Endometriosis</h2>
+                <p class = "section-intro">Endometriosis is rarely fatal, but it quietly drains years from one.</p>
+            </div>
+
+            <figure class="chart-card chart-card-wide">
+                <figcaption class="chart-title">Endometriosis: a stable third in Australia's reproductive burden ranking</figcaption>
+                <div id="chart-5" class="chart"></div>
+                <p class="chart-source">Source: AIHW Australian Burden of Disease Study 2024 (Table 10.2)</p>
+            </figure>
+
+
+            <div class="grid-2">
+                <figure class="chart-card">
+                    <figcaption class="chart-title">A burden that has grown by 75% since 2003</figcaption>
+                    <div id="chart-6" class="chart"></div>
+                    <p class="chart-source">Source: AIHW Australian Burden of Disease Study 2024</p>
+                </figure>
+                <aside class="context-block">
+                    <h3 class="context-title">Years of life, not years lost</h3>
+                    <p>
+                        Endometriosis is <strong>not fatal</strong>. Australian women still live,  on average, <strong>85 years</strong>. However, the pain,
+                        fatigue, and limitations is absorbed quietly into ordinary days by those living with the condition.
+                    </p>
+                    <p class="context-source">
+                        Source: AIHW Burden of Disease Study 2024; ABS Life Expectancy Data 2021-2023
+                    </p>
+                </aside>
+                <figure class="chart-card">
+                    <figcaption class="chart-title">It almost never comes alone</figcaption>
+                    <div id="chart-7" class="chart"></div>
+                    <p class="chart-source">Source: AIHW (2023), National Hospital Morbidity Database (2016-2017)</p>
+                </figure>
+            </div>
+        </section>
+
+        <!--SECTION 03: MAPS-->
+        <section class="section">
+            <div class = "section-header">
+                <span class = "section-number">03</span>
+                <h2 class = "section-title">Where you live matters</h2>
+                <p class = "section-intro">
+                    The burden of endometriosis is not shared evenly across Australia. Hospitalisation
+                    rates vary by more than two-fold between states and territories - a pattern shaped
+                    partly by access to specialist care, partly by cross-border patient flows, and
+                    partly by the simple fact that diagnosis depends on who is looking.
+                </p>
+            </div>
+            <figure class = "chart-card chart-card-wide">
+                <figcaption class="chart-title">Endometriosis hospitalisations vary widely between states</figcaption>
+                <div id = "chart-8" class = "chart"></div>
+                <p class = "chart-source">Source: AIHW (2023) NHMD Table 4.2, 2021-22 (any diagnosis, all ages)</p>
+            </figure>
+        </section>
+        <!--SECTION 04: TREATMENT AND PROCEDURES-->
+        <section class = "section">
+            <div class = "section-header">
+                <span class = "section-number">04</span>
+                <h2 class = "section-title">Treatment and Procedures</h2>
+                <p class = "section-intro">
+                    Endometriosis is diagnosed surgically, treated surgically, and often re-treated surgically.
+                    What happens in the operatin room and how long women wait to get there defines much of the
+                    experience of the disease.
+                </p>
+            </div>
+            <figure class="chart-card">
+                <figcaption class="chart-title">Most common procedures during Endometriosis Hospitalisations</figcaption>
+                <div id="chart-9" class="chart"></div>
+                <p class="chart-source">Source: AIHW (2023), National Hospital Morbidity Database, 2021-2022</p>
+            </figure>
+
+            <div class="grid-2">
+                <figure class="chart-card">
+                    <figcaption class="chart-title">Almost half wait for a month, 1 in 10 wait a year</figcaption>
+                    <div id="chart-10" class="chart"></div>
+                    <p class="chart-source">Source: AIHW National Elective Surgery Waiting Times Database, 2021-2022</p>
+                </figure>
+                <aside class="context-block">
+                    <h3 class="context-title">Access depends on who pays</h3>
+                    <p>
+                        Endometriosis hospitalisations are  <strong>disproportionately privately funded</strong>.
+                        Across all female hospitalisations, <strong>32%</strong> are covered by private health insurance.
+                        For endometriosis, that figure jumps to <strong>57%</strong>. This means thtat women who can afford 
+                        private care are more likely to get faster access to diagnosis and treatment, while those relying on 
+                        public healthcare face longer waits and more uncertainty.
+                    </p>
+                    <p class="context-source">
+                        Source: AIHW National Elective Surgery Waiting Times Database, 2021-2022 (Table 1a)
+                    </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <span class="section-number">05</span>
+                <h2 class="section-title">The economic burden</h2>
+                <p class="section-intro">
+                    Endometriosis costs the Australian health system around $247 million each year —
+                    and the money flows almost entirely through hospitals, not the early-stage care
+                    where diagnosis might happen sooner.
+                </p>
+            </div>
+
+            <figure class="chart-card chart-card-wide">
+                <figcaption class="chart-title">The cost peaks during reproductive years</figcaption>
+                <div id="chart-12" class="chart"></div>
+                <p class="chart-source">Source: AIHW Disease Expenditure Study, Australia 2020-21 (Table 6)</p>
+            </figure>
+        </section>
+
+        <!-- SECTION 06: RESOURCES & CALL TO ACTION -->
+        <section class="section section-resources">
+            <div class="section-header">
+                <span class="section-number">06</span>
+                <h2 class="section-title">If this is your story</h2>
+                <p class="section-intro">
+                    If anything you've read here reflects what you've been living with — or what someone
+                    you love has been living with — these are the places to turn next. They're real,
+                    free, and Australian.
+                </p>
+            </div>
+
+            <div class="resources-grid">
+                <article class="resource-card">
+                    <div class="resource-tag">Talk to someone</div>
+                    <h3 class="resource-title">Jean Hailes for Women's Health</h3>
+                    <p class="resource-body">
+                        Free, evidence-based information and a nurse-staffed health line. The
+                        Australian women's health charity that runs national endometriosis awareness.
+                    </p>
+                    <a class="resource-link" href="https://www.jeanhailes.org.au" target="_blank" rel="noopener">jeanhailes.org.au →</a>
+                </article>
+
+                <article class="resource-card">
+                    <div class="resource-tag">Find a specialist</div>
+                    <h3 class="resource-title">Endometriosis Australia</h3>
+                    <p class="resource-body">
+                        A national charity funding research, education, and a directory of accredited
+                        endometriosis specialists. Run by women who have lived it.
+                    </p>
+                    <a class="resource-link" href="https://endometriosisaustralia.org" target="_blank" rel="noopener">endometriosisaustralia.org →</a>
+                </article>
+
+                <article class="resource-card">
+                    <div class="resource-tag">Specialised care</div>
+                    <h3 class="resource-title">Endometriosis &amp; Pelvic Pain Clinics</h3>
+                    <p class="resource-body">
+                        Federally funded clinics across every state offering coordinated diagnosis,
+                        pain management, and support. Find your nearest clinic.
+                    </p>
+                    <a class="resource-link" href="https://www.health.gov.au/our-work/endometriosis-and-pelvic-pain-clinics" target="_blank" rel="noopener">health.gov.au →</a>
+                </article>
+
+                <article class="resource-card">
+                    <div class="resource-tag">Peer support</div>
+                    <h3 class="resource-title">QENDO</h3>
+                    <p class="resource-body">
+                        Peer-led support and a 24/7 helpline staffed by people with lived experience
+                        of endometriosis, adenomyosis, PCOS, and infertility.
+                    </p>
+                    <a class="resource-link" href="https://www.qendo.org.au" target="_blank" rel="noopener">qendo.org.au →</a>
+                </article>
+
+                <article class="resource-card resource-card-urgent">
+                    <div class="resource-tag">In crisis?</div>
+                    <h3 class="resource-title">Lifeline · 13 11 14</h3>
+                    <p class="resource-body">
+                        Chronic pain and delayed diagnosis are heavy. If you're struggling with your
+                        mental health, Lifeline offers free, confidential 24/7 support.
+                    </p>
+                    <a class="resource-link" href="https://www.lifeline.org.au" target="_blank" rel="noopener">lifeline.org.au →</a>
+                </article>
+
+                <article class="resource-card resource-card-action">
+                    <h3 class="resource-title">What's changing</h3>
+                    <ul class="resource-list">
+                        <li>National Action Plan for Endometriosis (2018) — first federal strategy</li>
+                        <li>$58M in dedicated NHMRC/MRFF research funding</li>
+                        <li>Visanne (2024) and Ryeqo (2025) added to the PBS — first new medications in three decades</li>
+                        <li>Endometriosis &amp; Pelvic Pain Clinics opened in every state</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-inner">
+                <p class="footer-line"><strong>The Hidden Burden of Endometriosis in Australia</strong></p>
+                <p class="footer-line">Created by Fiah Loraine Capili · FIT2179 Data Visualisation 2 · Monash University · May 2026</p>
+                <p class="footer-line"><strong>Data sources:</strong> AIHW <em>Endometriosis in Australia 2023</em>; AIHW Australian Burden of Disease Study 2024; AIHW Disease Expenditure Study 2020-21; AIHW NHMD Tables 4.2, S9, 7; AIHW National Elective Surgery Waiting Times Database; ABS Estimated Resident Population; Sherwin et al. (2024) <em>Acta Obstet Gynecol Scand</em>.</p>
+                <p class="footer-line">Vega-Lite JSON specs available in <a href="https://github.com/fcap0002/endometriosis_australia/tree/main/charts" target="_blank" rel="noopener">the /charts folder</a> of this repository.</p>
+            </div>
+        </footer>
     </main>
     <script src="script.js"></script>
 </body>

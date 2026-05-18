@@ -1,0 +1,28 @@
+diagnosis,view,percent
+Pelvic adhesions,Any endo hospitalisation,15.1
+Heavy / frequent menstruation,Any endo hospitalisation,9.4
+Other peritoneal adhesions,Any endo hospitalisation,8.8
+Uterine fibroids,Any endo hospitalisation,8.8
+Pelvic / perineal pain,Any endo hospitalisation,8.0
+Female infertility,Any endo hospitalisation,7.9
+Contraceptive device insertion,Any endo hospitalisation,5.1
+Ovarian cysts,Any endo hospitalisation,5.1
+Period pain (dysmenorrhoea),Any endo hospitalisation,5.0
+Uterine polyp,Any endo hospitalisation,4.6
+Pelvic adhesions,Principal diagnosis,16.7
+Other peritoneal adhesions,Principal diagnosis,9.2
+Contraceptive device insertion,Principal diagnosis,6.5
+Uterine fibroids,Principal diagnosis,4.0
+Ovarian cysts,Principal diagnosis,3.7
+Female infertility,Principal diagnosis,3.6
+Uterine polyp,Principal diagnosis,3.2
+Heavy / frequent menstruation,Principal diagnosis,2.7
+Heavy / frequent menstruation,Additional diagnosis only,16.6
+Pelvic / perineal pain,Additional diagnosis only,14.7
+Uterine fibroids,Additional diagnosis only,14.0
+Pelvic adhesions,Additional diagnosis only,13.3
+Female infertility,Additional diagnosis only,12.6
+Other peritoneal adhesions,Additional diagnosis only,8.5
+Period pain (dysmenorrhoea),Additional diagnosis only,8.3
+Ovarian cysts,Additional diagnosis only,6.6
+Uterine polyp,Additional diagnosis only,6.2

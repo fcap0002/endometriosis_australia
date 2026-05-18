@@ -1,0 +1,73 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Choropleth of Endometriosis-related Hospitalisation rates by state/territory of hospital, 2021-22. User can filter diagnosis scope and age group. Source: AIHW (2023) NHMD Table 4.2",
+    "width": 700,
+    "height": 500,
+    "background": "transparent",
+    "params": [
+        {
+            "name": "DiagnosisScope",
+            "value": "Any diagnosis",
+            "bind": {
+                "input": "select",
+                "options": ["Any diagnosis", "Principal diagnosis"],
+                "labels": ["Any diagnosis of endometriosis", "Principal diagnosis of Endometriosis"],
+                "name": "Diagnosis Scope: "
+            }
+        },
+        {
+            "name": "AgeGroup",
+            "value": "All ages",
+            "bind":{
+                "input": "select",
+                "options": ["All ages", "15-44 years"],
+                "labels": ["All ages", "15-44 (reproductive years)"],
+                "name": "Age Group: "
+            }
+        }
+    ],
+    "projection": {"type": "mercator", "center": [134,-28], "scale": 700},
+    "data": {"url": "data/endometriosis_rate_per_state.csv"},
+    "transform": [
+        {"filter": "datum.diagnosis_scope == DiagnosisScope"},
+        {"filter": "datum.age_group == AgeGroup"},
+        {
+            "lookup": "state",
+            "from": {
+                "data": {
+                "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson", "format": {"type": "json", "property": "features"}},
+                "key": "properties.STATE_NAME"
+            },
+            "as": "geo"
+        }
+    ],
+    "mark": {"type": "geoshape", "stroke": "#FBF7F0", "strokeWidth": 1.5},
+    "encoding": {
+        "shape": {"field":"geo", "type": "geojson"},
+        "color": {
+            "field": "rate_per_100k",
+            "type": "quantitative",
+            "title": "Rate per 100,000",
+            "scale": {
+                "range": ["#FBE7EE", "#F4C0D1", "#ED93B1", "#C9658A", "#993556", "#4B1528"],
+                "domainMin": 80
+            },
+            "legend": {
+                "orient": "right",
+                "labelFontSize": 10,
+                "titleFontSize": 11,
+                "gradientLength": 200
+            }
+        },
+        "tooltip":[
+            {"field": "state", "type": "nominal", "title": "State/Territory"},
+            {"field": "state_code", "type": "nominal", "title":"Code"},
+            {"field": "diagnosis_scope", "type": "nominal", "title": "Scope"},
+            {"field": "age_group", "type": "nominal", "title": "Age Group"},
+            {"field": "rate_per_100k", "type": "quantitative", "title": "Rate per 100,000", "format":".1f"}
+        ]
+    },
+    "config": {
+        "view": {"stroke": null}
+    }
+}

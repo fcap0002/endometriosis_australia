@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "Pictogram showing 1 in 7 Australian women diagnosed with endometriosis by midlife. Source: AIHW 2023.",
-    "width": 420,
-    "height": 120,
+    "width": 700,
+    "height": 200,
     "background": "transparent",
     "data":{
         "values":[
@@ -15,7 +15,7 @@
             {"position": 7, "affected": false, "img": "assets/uterus-grey.png"}
         ]
     },
-    "mark": {"type": "image", "width": 50, "height": 60},
+    "mark": {"type": "image", "width": 85, "height": 100},
     "encoding": {
         "x": {"field": "position", "type": "ordinal", "axis": null},
         "url": {"field": "img", "type": "nominal"},

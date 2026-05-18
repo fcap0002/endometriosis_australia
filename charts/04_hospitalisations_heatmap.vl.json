@@ -1,0 +1,43 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Heatmap of Endometriosis Hospitalisation Rates by Age Group and Year, 2012-2013 to 2022-2023. Source: AIHW 2023, NHMD",
+    "width": 700,
+    "height": 320,
+    "background": "transparent",
+    "data": {"url": "data/hospitalisations_year_age.csv"},
+    "mark": {"type": "rect", "stroke": "#FBF7F0","strokeWidth": 2},
+    "encoding": {
+        "x":{
+            "field": "year",
+            "type":"ordinal",
+            "title": "Year",
+            "axis": {"labelFontSize": 10, "labelAngle": -40, "titleFontSize": 12, "titlePadding": 10}
+        },
+        "y":{
+            "field": "age_group",
+            "type": "ordinal",
+            "title": "Age Group",
+            "sort":[
+                "15 – 19 years", "20 – 24 years", "25 – 29 years", "30 – 34 years", "35 – 39 years", "40 – 44 years", "45 – 49 years", "50 – 54 years", "55 – 59 years", "60 – 64 years"
+            ],
+            "axis": {"labelFontSize": 10, "titleFontSize": 12, "titlePadding": 10}
+        },
+        "color": {
+            "field": "total_any_rate",
+            "type": "quantitative",
+            "title": "Hospitalisatiosn per 100,000 Womeen",
+            "scale": {"range":["#FBE7EE", "#F4C0D1", "#ED93B1", "#C9658A", "#993556", "#4B1528"], "domain": [0, 875], "type":"linear"},
+            "legend": {"labelFontSize": 10, "titleFontSize": 11, "orient": "right", "gradientLength": 200}
+        },
+        "tooltip":[
+            {"field": "age_group", "type": "ordinal", "title": "Age Group"},
+            {"field": "year", "type": "ordinal", "title": "Year"},
+            {"field": "total_any_n", "type": "quantitative", "title": "Total Hospitalisations", "format": ","},
+            {"field": "total_any_rate", "type": "quantitative", "title": "Per 100,000 Women", "format": ".0f"}
+        ]
+    },
+    "config": {
+        "view": {"stroke": null},
+        "axis": {"grid": false, "domain": false}
+    }
+}

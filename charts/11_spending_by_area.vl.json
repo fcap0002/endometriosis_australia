@@ -1,0 +1,47 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Endometriosis health spending by area of expenditure, Australia 2020-21. Source: AIHW Disease Expenditure Study.",
+  "width": 540,
+  "height": 360,
+  "background": "transparent",
+  "data": {"url": "data/spending_by_area.csv"},
+  "mark": {"type": "bar", "cornerRadiusEnd": 3, "height": 26},
+  "encoding": {
+    "y": {
+      "field": "area",
+      "type": "nominal",
+      "title": null,
+      "sort": "-x",
+      "axis": {"labelFontSize": 11, "labelLimit": 220}
+    },
+    "x": {
+      "field": "amount",
+      "type": "quantitative",
+      "title": "Annual spend (AUD)",
+      "axis": {"labelFontSize": 11, "titleFontSize": 12, "titlePadding": 10, "format": "$,.2s"}
+    },
+    "color": {
+      "field": "broad_area",
+      "type": "nominal",
+      "title": "Category",
+      "scale": {
+        "domain": ["Hospitals", "Referred medical services", "Primary health care"],
+        "range": ["#993556", "#ED93B1", "#0F6E56"]
+      },
+      "legend": {
+        "orient": "bottom",
+        "labelFontSize": 11,
+        "titleFontSize": 11
+      }
+    },
+    "tooltip": [
+      {"field": "broad_area", "type": "nominal", "title": "Category"},
+      {"field": "area", "type": "nominal", "title": "Area"},
+      {"field": "amount", "type": "quantitative", "title": "Annual spend", "format": "$,.0f"}
+    ]
+  },
+  "config": {
+    "view": {"stroke": null},
+    "axis": {"grid": true, "gridColor": "#E5DDD0", "gridOpacity": 0.4, "domain": false}
+  }
+}

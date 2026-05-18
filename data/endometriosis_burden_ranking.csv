@@ -1,0 +1,66 @@
+year,diagnosis,yld,rank
+2003,Genital prolapse,22627,1
+2003,Polycystic ovarian syndrome (PCOS),12726,2
+2003,Endometriosis,4695,3
+2003,Other reproductive conditions,1936,4
+2003,Infertility,440,5
+2003,Hypertensive disorders of pregnancy,302,6
+2003,Early pregnancy loss,259,7
+2003,Gestational diabetes,156,8
+2003,Uterine fibroids,144,9
+2003,Obstructed labour,138,10
+2003,Other maternal conditions,137,11
+2003,Maternal haemorrhage,111,12
+2003,Maternal infections,32,13
+2011,Genital prolapse,26788,1
+2011,Polycystic ovarian syndrome (PCOS),14243,2
+2011,Endometriosis,4491,3
+2011,Other reproductive conditions,2146,4
+2011,Infertility,425,5
+2011,Hypertensive disorders of pregnancy,281,6
+2011,Early pregnancy loss,252,7
+2011,Gestational diabetes,229,8
+2011,Other maternal conditions,206,9
+2011,Obstructed labour,195,10
+2011,Maternal haemorrhage,167,11
+2011,Uterine fibroids,119,12
+2011,Maternal infections,41,13
+2015,Genital prolapse,29140,1
+2015,Polycystic ovarian syndrome (PCOS),16014,2
+2015,Endometriosis,6963,3
+2015,Other reproductive conditions,2260,4
+2015,Infertility,646,5
+2015,Gestational diabetes,546,6
+2015,Hypertensive disorders of pregnancy,291,7
+2015,Early pregnancy loss,256,8
+2015,Other maternal conditions,234,9
+2015,Obstructed labour,215,10
+2015,Maternal haemorrhage,209,11
+2015,Uterine fibroids,129,12
+2015,Maternal infections,51,13
+2018,Genital prolapse,31024,1
+2018,Polycystic ovarian syndrome (PCOS),16854,2
+2018,Endometriosis,7521,3
+2018,Other reproductive conditions,2360,4
+2018,Infertility,723,5
+2018,Gestational diabetes,695,6
+2018,Hypertensive disorders of pregnancy,328,7
+2018,Early pregnancy loss,253,8
+2018,Maternal haemorrhage,251,9
+2018,Other maternal conditions,251,9
+2018,Obstructed labour,245,10
+2018,Uterine fibroids,130,11
+2018,Maternal infections,61,12
+2023,Genital prolapse,34251,1
+2023,Polycystic ovarian syndrome (PCOS),17285,2
+2023,Endometriosis,8213,3
+2023,Other reproductive conditions,2459,4
+2023,Gestational diabetes,819,5
+2023,Infertility,797,6
+2023,Hypertensive disorders of pregnancy,349,7
+2023,Maternal haemorrhage,306,8
+2023,Obstructed labour,289,9
+2023,Other maternal conditions,270,10
+2023,Early pregnancy loss,247,11
+2023,Uterine fibroids,138,12
+2023,Maternal infections,68,13

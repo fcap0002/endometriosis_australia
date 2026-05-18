@@ -1,0 +1,102 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Slope chart of YLD rank for reproductive and maternal conditions in Australia, comparing 2003 and 2023. Endometriosis sits at rank 3 in both years. Source: AIHW Australian Burden of Disease Study 2024 (Table 10.2).",
+  "width": 480,
+  "height": 480,
+  "background": "transparent",
+  "data": {"url": "data/burden_ranking.csv"},
+  "transform": [
+    {
+      "calculate": "datum.diagnosis === 'Endometriosis' ? 'Endometriosis' : 'Background'",
+      "as": "group"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {"type": "line", "strokeWidth": 1.5, "opacity": 0.45, "interpolate": "linear"},
+      "transform": [{"filter": "datum.group == 'Background'"}],
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "title": null,
+          "axis": {"labelFontSize": 13, "labelFontWeight": 600, "labelPadding": 12, "domain": false, "ticks": false, "orient": "top"}
+        },
+        "y": {
+          "field": "rank",
+          "type": "quantitative",
+          "title": "Rank by YLD (1 = highest burden)",
+          "scale": {"reverse": true, "domain": [0.5, 13.5]},
+          "axis": {"values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], "labelFontSize": 11, "titleFontSize": 12, "domain": false, "grid": true, "gridColor": "#E5DDD0", "gridOpacity": 0}
+        },
+        "detail": {"field": "diagnosis"},
+        "color": {"value": "#C9B8AE"}
+      }
+    },
+    {
+      "mark": {"type": "line", "strokeWidth": 4, "interpolate": "linear", "color": "#993556"},
+      "transform": [{"filter": "datum.group == 'Endometriosis'"}],
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {"field": "rank", "type": "quantitative"},
+        "detail": {"field": "diagnosis"}
+      }
+    },
+    {
+      "mark": {"type": "circle", "size": 100, "stroke": "#FBF7F0", "strokeWidth": 2},
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {"field": "rank", "type": "quantitative"},
+        "color": {
+          "condition": {"test": "datum.group == 'Endometriosis'", "value": "#993556"},
+          "value": "#C9B8AE"
+        },
+        "tooltip": [
+          {"field": "diagnosis", "type": "nominal", "title": "Condition"},
+          {"field": "year", "type": "ordinal", "title": "Year"},
+          {"field": "rank", "type": "quantitative", "title": "Rank"},
+          {"field": "yld", "type": "quantitative", "title": "YLD", "format": ","}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "text", "align": "right", "dx": -10, "fontSize": 10, "color": "#888780"},
+      "transform": [{"filter": "datum.year == 2003 && datum.diagnosis != 'Endometriosis'"}],
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {"field": "rank", "type": "quantitative"},
+        "text": {"field": "diagnosis"}
+      }
+    },
+    {
+      "mark": {"type": "text", "align": "right", "dx": -10, "fontSize": 11, "fontWeight": 600, "color": "#4B1528"},
+      "transform": [{"filter": "datum.year == 2003 && datum.diagnosis == 'Endometriosis'"}],
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {"field": "rank", "type": "quantitative"},
+        "text": {"field": "diagnosis"}
+      }
+    },
+    {
+      "mark": {"type": "text", "align": "left", "dx": 10, "fontSize": 10, "color": "#888780"},
+      "transform": [{"filter": "datum.year == 2023 && datum.diagnosis != 'Endometriosis'"}],
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {"field": "rank", "type": "quantitative"},
+        "text": {"field": "diagnosis"}
+      }
+    },
+    {
+      "mark": {"type": "text", "align": "left", "dx": 10, "fontSize": 11, "fontWeight": 600, "color": "#4B1528"},
+      "transform": [{"filter": "datum.year == 2023 && datum.diagnosis == 'Endometriosis'"}],
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {"field": "rank", "type": "quantitative"},
+        "text": {"field": "diagnosis"}
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null}
+  }
+}

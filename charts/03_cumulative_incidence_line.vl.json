@@ -1,0 +1,103 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Cumulative incidence of endometriosis by age, comparing women born in 1973-1978 vs 1989-1995. Source: AIHW 2023, ALSWH.",
+    "width": 350,
+    "height": 320,
+    "background": "transparent",
+    "data": {"url": "data/cumulative_incidence.csv"},
+    "transform": [
+        {
+            "calculate": "datum.cohort ==  '1973–78' ? 'older' : 'younger'",
+            "as": "cohort_category"
+        }
+    ],
+    "layer":[
+        {
+            "transform": [
+                {
+                    "pivot": "cohort_category",
+                    "value": "cumulative_incidence_pct",
+                    "groupby": ["age"]
+                },
+                {"filter": "datum.older != null && datum.younger != null"}
+            ],
+            "mark": {
+                "type": "area",
+                "opacity": 0.18,
+                "interpolate": "monotone",
+                "color": "#993556"
+            },
+            "encoding": {
+                "x":{
+                    "field": "age",
+                    "type": "quantitative"},
+                "y":{
+                    "field": "older",
+                    "type": "quantitative"
+                },
+                "y2":{
+                    "field": "younger"
+                }
+            }
+        },
+        {
+            "mark": {"type": "line", "strokeWidth": 3, "interpolate": "monotone"},
+            "encoding": {
+                "x":{
+                    "field": "age",
+                    "type": "quantitative",
+                    "title": "Age (years)",
+                    "scale": {"domain":[12,50]},
+                    "axis": {"labelFontSize": 11, "titleFontSize": 12, "titlePadding": 10}
+                },
+                "y":{
+                    "field": "cumulative_incidence_pct",
+                    "type":"quantitative",
+                    "scale": {"domain":[0,15]},
+                    "title": "% of Women Diagnosed by this Age",
+                    "axis": {"labelFontSize": 11, "titleFontSize": 12, "titlePadding": 10}
+                },
+                "color":{
+                    "field": "cohort",
+                    "type": "nominal",
+                    "title": "Birth Cohort",
+                    "scale": {"domain": ["1989–95", "1973–78"], "range": ["#C9B8AE", "#993556"]},
+                    "legend": {"labelFontSize": 11, "titleFontSize": 12, "orient": "top-left"}
+                }
+            }
+        },
+        {
+            "mark":{
+                "type": "point",
+                "filled": true,
+                "size": 60
+            },
+            "encoding": {
+                "x":{
+                    "field": "age",
+                    "type": "quantitative"
+                },
+                "y":{
+                    "field": "cumulative_incidence_pct",
+                    "type": "quantitative"
+                },
+                "color":{
+                    "field": "cohort",
+                    "type": "nominal",
+                    "scale": {"domain": ["1989–95", "1973–78"], "range": ["#C9B8AE", "#993556"]},
+                    "legend": null
+                },
+                "tooltip":[
+                    {"field": "age", "type": "quantitative", "title": "Age"},
+                    {"field": "cumulative_incidence_pct", "type": "quantitative", "title": "% Diagnosed"},
+                    {"field": "cohort", "type": "nominal", "title": "Birth Cohort"}
+                ]
+            }
+        }
+    ],
+
+    "config":{
+        "view": {"stroke": null},
+        "axis": {"grid": true, "gridColor": "#E5DDD0", "gridOpacity": 0.5, "domain": false}
+    }
+}
