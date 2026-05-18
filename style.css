@@ -566,3 +566,14 @@ header::before {
     .section-header { grid-template-columns: 1fr; gap: 1.5rem; }
     .section { padding: 4rem 1.5rem; }
 }
+
+.chart-card-full {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2.5rem 3rem;
+}
+
+.chart-card-full .chart {
+    min-height: 600px;
+    width: 100%;
+}
