@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Endometriosis health spending by age group and broad area of expenditure, Australia 2020-21. Source: AIHW Disease Expenditure Study.",
-  "width": 600,
-  "height": 320,
+  "width": 900,
+  "height": 400,
   "background": "transparent",
   "data": {"url": "data/spending_by_age.csv"},
   "mark": {"type": "bar"},
